@@ -102,9 +102,93 @@ nav {
 
 .cover {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
 }
 
 .cover img {
-  height: 60vh;
+  height: 100%;
   filter: drop-shadow(0px 5px 3px black);
+  animation: drop 1.5s ease;
+}
+
+.big-circle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0.5;
+  height: 80%;
+}
+
+.medium-circle {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  z-index: -1;
+  height: 60%;
+  opacity: 0.4;
+}
+
+.small-circle {
+  position: absolute;
+  bottom: 0%;
+  left: 20%;
+  z-index: -1;
+}
+
+.laptop-select {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 20%;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+ .presentation {
+  flex-direction: column;
+ }
+ .introduction {
+  margin-top: 5vh;
+  text-align: center;
+ }
+ .intro-text hq {
+  font-size: 30px;
+ }
+ .intro-text p {
+  font-size: 18px;
+ }
+ .cta {
+  padding: 10px 0px 0px 0px;
+ }
+ .laptop-select {
+  bottom: 5%;
+  right: 50%;
+  width: 50%;
+  transform: translate(50%, 5%);
+ }
+
+ .cover img {
+  height: 80%;
+ }
+
+ .small-circle, .medium-circle, .big-circle {
+  opacity: 0.2;
+ }
+
+
 }
